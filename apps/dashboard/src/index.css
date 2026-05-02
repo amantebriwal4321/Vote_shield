@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --shield-primary: #2563eb;
+  --shield-dark: #0f172a;
+  --shield-accent: #FF9933;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #64748b; }
+
+/* Leaflet overrides for dark theme */
+.leaflet-container { background: #1e293b !important; border-radius: 12px; }
+.leaflet-popup-content-wrapper { background: #1e293b; color: #e2e8f0; border-radius: 12px; border: 1px solid #334155; }
+.leaflet-popup-tip { background: #1e293b; }
+.leaflet-popup-content { margin: 12px 16px; }
+.leaflet-control-zoom a { background: #1e293b !important; color: #e2e8f0 !important; border-color: #334155 !important; }
+.leaflet-control-zoom a:hover { background: #334155 !important; }
+
+/* Glassmorphism cards */
+.glass-card {
+  background: rgba(30, 41, 59, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  border-radius: 16px;
+}
+
+/* Urgency pulse animation */
+@keyframes urgencyPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+}
+.urgency-pulse { animation: urgencyPulse 2s infinite; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FF9933, #ffffff, #138808);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
