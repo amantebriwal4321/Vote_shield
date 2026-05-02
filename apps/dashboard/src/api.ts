@@ -1,4 +1,4 @@
-const API_BASE = import.meta.env.DEV ? '' : '';
+const API_BASE = import.meta.env.VITE_API_URL || '';
 
 export interface Incident {
   id: string;

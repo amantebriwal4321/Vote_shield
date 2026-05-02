@@ -49,7 +49,8 @@ export default function WhatsAppSimulator() {
     try {
       // Direct POST to backend WhatsApp webhook (bypassing Twilio!)
       // We pass Language to simulate a mock language session setup
-      const res = await fetch('http://localhost:3000/api/whatsapp', {
+      const API_BASE = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${API_BASE}/api/whatsapp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
